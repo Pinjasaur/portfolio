@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "description": "My personal portfolio.",
+  "main": "index.js",
+  "authors": [
+    "Paul Esch-Laurent"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Pinjasaur/portfolio",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^5.0.0"
+  }
+}

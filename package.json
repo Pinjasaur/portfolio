@@ -1,0 +1,28 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "description": "My personal portfolio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pinjasaur/portfolio.git"
+  },
+  "author": "Paul Esch-Laurent",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/Pinjasaur/portfolio/issues"
+  },
+  "homepage": "https://github.com/Pinjasaur/portfolio",
+  "devDependencies": {
+    "browser-sync": "^2.17.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7"
+  }
+}

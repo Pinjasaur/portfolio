@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Paul Esch-Laurent -- Developer -- @Pinjasaur
+
+# THANKS
+
+    Stack Overflow
+    Caffeine
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    npm, Bower, Gulp
