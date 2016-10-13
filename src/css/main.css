@@ -225,13 +225,15 @@ html {
 }
 
 ::-moz-selection {
-  background: #BADA55;
-  color: #080808;
+  background: #6d14e9;
+  color: #f7f7f7;
   text-shadow: none;
 }
 
 ::selection {
-  background: #BADA55;
-  color: #080808;
+  background: #6d14e9;
+  color: #f7f7f7;
   text-shadow: none;
 }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,12 @@
-$color-primary: #BADA55;
-$color-secondary: #FAC375;
-$color-tertiary: #ee00aa;
+$color-primary: #6d14e9;
+$color-secondary: #862ffe;
+$color-tertiary: #fff91a;
 
 $accent-dark: lighten(#000, 3%);
 $accent-light: darken(#fff, 3%);
+
+$breakpoints: (
+  sm: 400px,
+  md: 700px,
+  lg: 1000px
+);

@@ -7,12 +7,12 @@ html {
 
 ::-moz-selection {
   background: $color-primary;
-  color: $accent-dark;
+  color: $accent-light;
   text-shadow: none;
 }
 
 ::selection {
   background: $color-primary;
-  color: $accent-dark;
+  color: $accent-light;
   text-shadow: none;
 }
