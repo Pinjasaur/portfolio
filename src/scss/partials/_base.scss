@@ -1,0 +1,18 @@
+// Base styles
+
+html {
+  background: $accent-light;
+  color: $accent-dark;
+}
+
+::-moz-selection {
+  background: $color-primary;
+  color: $accent-dark;
+  text-shadow: none;
+}
+
+::selection {
+  background: $color-primary;
+  color: $accent-dark;
+  text-shadow: none;
+}

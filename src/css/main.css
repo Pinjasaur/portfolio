@@ -83,9 +83,6 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-/* ==========================================================================
    Helper classes
    ========================================================================== */
 /*
@@ -156,19 +153,6 @@ textarea {
 }
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    http://www.phpied.com/delay-loading-your-print-css/
@@ -233,4 +217,21 @@ textarea {
   h3 {
     page-break-after: avoid;
   }
+}
+
+html {
+  background: #f7f7f7;
+  color: #080808;
+}
+
+::-moz-selection {
+  background: #BADA55;
+  color: #080808;
+  text-shadow: none;
+}
+
+::selection {
+  background: #BADA55;
+  color: #080808;
+  text-shadow: none;
 }
