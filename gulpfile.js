@@ -2,6 +2,7 @@ var gulp         = require("gulp"),
     util         = require("gulp-util"),
     browserSync  = require("browser-sync").create(),
     sass         = require("gulp-sass"),
+    sourcemaps   = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer"),
     plumber      = require("gulp-plumber"),
     pkg          = require("./package.json"),
@@ -47,8 +48,10 @@ gulp.task("build:css", function() {
     .pipe(plumber())
     // need to use sass.sync() for `plumber` to work correctly and not hang
     // https://github.com/floatdrop/gulp-plumber/issues/32#issuecomment-106589180
+    .pipe(sourcemaps.init())
     .pipe(sass.sync(config.sass))
     .pipe(autoprefixer(config.autoprefixer))
+    .pipe(sourcemaps.write("."))
     .pipe(gulp.dest(config.paths.src + "css"))
     .pipe(browserSync.reload({ stream: true }));
 });
