@@ -23,12 +23,12 @@
 
     <!-- TODO: Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(p,a,u,l,i,e){p.GoogleAnalyticsObject=l;p[l]||(p[l]=
-      function(){(p[l].q=p[l].q||[]).push(arguments)});p[l].l=+new Date;
-      i=a.createElement(u);e=a.getElementsByTagName(u)[0];
-      i.src='//www.google-analytics.com/analytics.js';
-      e.parentNode.insertBefore(i,e)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    !function(p,a,u,l){p.GoogleAnalyticsObject=u;p[u]||(p[u]=function(){
+    (p[u].q=p[u].q||[]).push(arguments)});p[u].l=+new Date;l=a.createElement('script');
+    var e=a.scripts[0];l.src='//www.google-analytics.com/analytics.js';
+    e.parentNode.insertBefore(l,e)}(window,document,'ga');
+    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('send', 'pageview');
     </script>
   </body>
 </html>
