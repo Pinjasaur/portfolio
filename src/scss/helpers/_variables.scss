@@ -1,12 +1,18 @@
-$color-primary: #6d14e9;
+$color-primary:   #6d14e9;
 $color-secondary: #862ffe;
-$color-tertiary: #fff91a;
+$color-tertiary:  #fff91a;
 
-$accent-dark: lighten(#000, 3%);
+$accent-dark:  lighten(#000, 3%);
 $accent-light: darken(#fff, 3%);
 
+$font-primary:   Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+$font-secondary: Bitter, Georgia, serif;
+$font-tertiary:  Inconsolata, Consolas, Monaco, monospace;
+
 $breakpoints: (
-  sm: 400px,
-  md: 700px,
-  lg: 1000px
+  xs: 350px;
+  sm: 700px,
+  md: 960px,
+  lg: 1440px,
+  xl: 1920px
 );
