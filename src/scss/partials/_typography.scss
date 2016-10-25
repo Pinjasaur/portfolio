@@ -1,0 +1,20 @@
+html {
+  font-family: $font-primary;
+  line-height: 1.5;
+  color: lighten($accent-dark, 20%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-secondary;
+  color: $accent-dark;
+}
+
+pre,
+code {
+  font-family: $font-tertiary;
+}

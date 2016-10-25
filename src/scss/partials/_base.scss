@@ -1,8 +1,8 @@
-// Base styles
+// Base styles (e.g. typography)
+@import "typography";
 
 html {
   background: $accent-light;
-  color: $accent-dark;
 }
 
 ::-moz-selection {
