@@ -1,7 +1,7 @@
 html {
   font-family: $font-primary;
   line-height: 1.5;
-  color: lighten($accent-dark, 20%);
+  color: lighten($accent-dark, 10%);
 }
 
 h1,
@@ -17,4 +17,20 @@ h6 {
 pre,
 code {
   font-family: $font-tertiary;
+}
+
+code {
+  /**
+   * Evidently these are the same thing, but you need both for browser consistency.
+   * https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+   */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  padding: .1em .2em;
+  border-radius: 2px;
+  border: 1px solid darken($accent-light, 25%);
+  background: lighten(desaturate($color-primary, 40%), 40%);
+  color: darken($color-primary, 5%);
+  font-weight: bold;
 }

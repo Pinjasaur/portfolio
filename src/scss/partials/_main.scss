@@ -1,0 +1,8 @@
+main {
+  padding: 2rem;
+  margin-top: 0;
+
+  @media (max-width: map-get($breakpoints, sm)) {
+    padding: 1rem;
+  }
+}

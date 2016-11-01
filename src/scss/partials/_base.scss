@@ -3,6 +3,7 @@
 
 html {
   background: $accent-light;
+  font-size: calc(.75em + .35vw);
 }
 
 ::-moz-selection {
@@ -15,4 +16,8 @@ html {
   background: $color-primary;
   color: $accent-light;
   text-shadow: none;
+}
+
+body * + * {
+  margin-top: 1.5rem;
 }
