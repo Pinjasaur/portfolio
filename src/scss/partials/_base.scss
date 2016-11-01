@@ -6,6 +6,12 @@ html {
   font-size: calc(.75em + .35vw);
 }
 
+noscript {
+  margin: 0 !important;
+  padding: 1rem;
+  border: 2px solid red;
+}
+
 ::-moz-selection {
   background: $color-primary;
   color: $accent-light;
