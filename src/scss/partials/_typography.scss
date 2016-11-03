@@ -34,3 +34,20 @@ code {
   color: darken($color-primary, 5%);
   font-weight: bold;
 }
+
+a {
+  // font-weight: bold;
+}
+
+a:link {
+  color: $color-primary;
+}
+
+a:visited {
+  color: lighten($color-primary, 10%);
+}
+
+a:hover,
+a:active {
+  color: darken($color-primary, 10%);
+}

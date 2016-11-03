@@ -11,7 +11,7 @@ header {
     flex-flow: column;
     height: 100%;
     position: relative;
-    padding-left: calc((100% - 5%) / 2);
+    padding-left: calc((100% - 40%) / 2);
 
     @media (max-width: map-get($breakpoints, sm)) {
       padding-left: 0;

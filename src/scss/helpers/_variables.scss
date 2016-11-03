@@ -5,8 +5,11 @@ $color-tertiary:  #fff91a;
 $accent-dark:  lighten(#000, 3%);
 $accent-light: darken(#fff, 3%);
 
+// Sans-serif
 $font-primary:   Raleway, Helvetica Neue, Helvetica, Arial, sans-serif;
+// Serif
 $font-secondary: Bitter, Georgia, serif;
+// Monospace
 $font-tertiary:  Inconsolata, Consolas, Monaco, monospace;
 
 $breakpoints: (
