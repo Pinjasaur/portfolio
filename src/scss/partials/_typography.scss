@@ -40,10 +40,13 @@ a:link {
 }
 
 a:visited {
+  color: darken($color-primary, 10%);
+}
+
+a:hover {
   color: lighten($color-primary, 10%);
 }
 
-a:hover,
 a:active {
-  color: darken($color-primary, 10%);
+  color: lighten($color-primary, 10%);
 }

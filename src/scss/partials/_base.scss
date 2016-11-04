@@ -4,6 +4,18 @@
 html {
   background: $accent-light;
   font-size: calc(.75em + .35vw);
+
+  /**
+   * Box-sizing best-practices from CSS-Tricks.
+   * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+   */
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 noscript {

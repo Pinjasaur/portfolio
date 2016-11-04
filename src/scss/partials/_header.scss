@@ -15,6 +15,10 @@ header {
 
     @media (max-width: map-get($breakpoints, sm)) {
       padding-left: 0;
+      justify-content: flex-start;
+      .headline {
+        margin-top: 2em;
+      }
     }
   }
 

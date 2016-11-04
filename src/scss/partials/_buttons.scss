@@ -1,0 +1,48 @@
+.btn,
+%btn {
+  display: inline-block;
+  padding: .5em;
+  text-decoration: none;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.btn {
+  // Weird syntax -- for duplicating parent class (e.g. .btn.btn--whatever)
+  &#{&}--primary {
+    @extend %btn;
+    color: $color-primary;
+    border-color: $color-primary;
+
+    &:hover {
+      background: $color-primary;
+      color: $accent-light;
+    }
+  }
+
+  &#{&}--secondary {
+    @extend %btn;
+    color: $accent-light;
+    border-color: $accent-light;
+
+    &:hover {
+      background: $accent-light;
+      color: $accent-dark;
+    }
+  }
+
+  &#{&}--fluid {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &#{&}--callout {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .05em;
+    font-size: 1.25em;
+  }
+}
