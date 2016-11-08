@@ -39,15 +39,13 @@ var gulp         = require("gulp"),
         }
       },
       htmlmin: {
-        collapseInlineTagWhitespace: true,
-        collapseWhitespace: true,
         removeComments: true,
         minifyCSS: true,
         minifyJS: true
       },
       browserSync: {
         server: {
-          baseDir: paths.src
+          baseDir: (production) ? paths.dist : paths.src
         },
         notify: false,
         // Create a tunnel (if using `--tunnel`) with a subdomain of:
@@ -60,11 +58,6 @@ var gulp         = require("gulp"),
                 false,
       }
     };
-
-// Init `browser-sync`
-gulp.task("browser-sync", function() {
-  browserSync.init(config.browserSync);
-});
 
 // `useref` all the HTML files, optimizing HTML, CSS, and JS in the process
 gulp.task("build:useref", function() {
@@ -109,12 +102,18 @@ gulp.task("build:js", function() {
     .pipe(plugins.jshint.reporter("jshint-stylish"));
 });
 
+// Copy misc items to build dir
+gulp.task("build:misc", function() {
+  return gulp.src("humans.txt")
+    .pipe(gulp.dest(paths.dist));
+});
+
 // Build assets depending on if `--prod` is set
-gulp.task("build", function() {
+gulp.task("build", function(callback) {
   if (production) {
-    plugins.runSequence("clean", ["build:css", "build:js"], "build:useref");
+    plugins.runSequence("clean", ["build:css", "build:js"], ["build:useref", "build:misc"], callback);
   } else {
-    plugins.runSequence(["build:css", "build:js"]);
+    plugins.runSequence(["build:css", "build:js"], callback);
   }
 });
 
@@ -125,7 +124,8 @@ gulp.task("clean", function() {
 });
 
 // Serve the app via `browser-sync` and watch for changes and reload
-gulp.task("serve", ["browser-sync", "build"], function() {
+gulp.task("serve", ["build"], function() {
+  browserSync.init(config.browserSync);
   gulp.watch(paths.src + "/scss/**/*.scss", ["build:css"]);
   gulp.watch(paths.src + "/js/**/*.js", browserSync.reload);
   gulp.watch(paths.src + "/*.html", browserSync.reload);
