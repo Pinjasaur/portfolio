@@ -39,9 +39,7 @@ var gulp         = require("gulp"),
         }
       },
       htmlmin: {
-        removeComments: true,
-        minifyCSS: true,
-        minifyJS: true
+        removeComments: true
       },
       browserSync: {
         server: {
