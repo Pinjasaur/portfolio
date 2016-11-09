@@ -1,7 +1,8 @@
-.contact {
+/*form*/.contact {
   input,
   textarea {
     width: 100%;
+    font-family: $font-primary;
 
     &:focus {
       outline-color: $color-primary;
