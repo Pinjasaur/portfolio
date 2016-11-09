@@ -51,15 +51,15 @@ $toast-grid-column-namespace: "col" !default;
 $toast-col-groups: (12) !default;
 
 // Gutter width
-$toast-gutter-width: 20px !default;
+$toast-gutter-width: 2rem !default;
 
 // Breakpoints
 $toast-breakpoint-medium: map-get($breakpoints, md) !default;
 $toast-breakpoint-small: map-get($breakpoints, xs) !default;
 
 // Pushes and pulls
-$toast-pushes: true !default;
-$toast-pulls: true !default;
+$toast-pushes: false !default;
+$toast-pulls: false !default;
 
 .#{$toast-grid-namespace} {
   list-style: none;

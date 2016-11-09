@@ -4,4 +4,12 @@ footer {
   background: $accent-dark;
   color: $accent-light;
   text-align: center;
+
+  > * + * {
+    margin-top: 1.5rem;
+  }
+
+  .socials > .btn + .btn {
+    margin-left: 2em;
+  }
 }

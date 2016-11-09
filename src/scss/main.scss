@@ -1,17 +1,19 @@
-// 3rd-party
-@import "vendor/h5bp";
-
 // Helpers
 @import "helpers/all";
 
-// Toast grid
+// 3rd Party
+@import "vendor/h5bp";
 @import "vendor/toast";
 
 // Partials
 @import "partials/base";
-@import "partials/buttons";
 @import "partials/header";
 @import "partials/main";
 @import "partials/footer";
 @import "partials/easter-eggs";
-@import "partials/shame";
+
+// Components
+@import "components/buttons";
+@import "components/cards";
+
+@import "shame";

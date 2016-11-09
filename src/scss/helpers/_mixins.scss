@@ -1,0 +1,27 @@
+@mixin anchor-variant($color) {
+  &:link {
+    color: $color;
+  }
+
+  &:visited {
+    color: darken($color, 10%);
+  }
+
+  &:hover {
+    color: lighten($color, 10%);
+  }
+
+  &:active {
+    color: lighten($color, 10%);
+  }
+}
+
+@mixin btn-variant($color-from, $color-to) {
+  color: $color-from;
+  border-color: $color-from;
+
+  &:hover {
+    background: $color-from;
+    color: $color-to;
+  }
+}

@@ -35,18 +35,32 @@ code {
   font-weight: bold;
 }
 
-a:link {
-  color: $color-primary;
+.branded {
+  position: relative;
+  white-space: nowrap;
+
+  &:after {
+    content: "";
+    background-color: $color-tertiary;
+    display: block;
+    width: 100%;
+    height: .25em;
+    position: absolute;
+    left: 0;
+    top: calc(100% - .1em);
+    transform: rotate(-.5deg);
+    box-shadow: 1px 1px 1px 0 rgba($accent-dark, .2);
+  }
 }
 
-a:visited {
-  color: darken($color-primary, 10%);
+a {
+  @include anchor-variant($color-primary);
 }
 
-a:hover {
-  color: lighten($color-primary, 10%);
-}
-
-a:active {
-  color: lighten($color-primary, 10%);
+a {
+  // Gotta please our pals across the pond :)
+  &.accent--gray,
+  &.accent--grey {
+    @include anchor-variant(darken($accent-light, 40%));
+  }
 }

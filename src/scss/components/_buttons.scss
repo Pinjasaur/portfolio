@@ -1,0 +1,57 @@
+.btn,
+%btn {
+  display: inline-block;
+  padding: .5em;
+  text-decoration: none;
+  line-height: 1;
+  border-width: 1px;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+.btn {
+  // Weird syntax -- for duplicating parent class (e.g. .btn.btn--whatever)
+  &#{&}--primary {
+    @extend %btn;
+    @include btn-variant($color-primary, $accent-light);
+  }
+
+  &#{&}--secondary {
+    @extend %btn;
+    @include btn-variant($color-tertiary, $accent-dark);
+  }
+
+  &#{&}--light {
+    @extend %btn;
+    @include btn-variant($accent-light, $accent-dark);
+  }
+
+  &#{&}--dark {
+    @extend %btn;
+    @include btn-variant($accent-dark, $accent-light);
+  }
+
+  &#{&}--fluid {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &#{&}--callout {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .05em;
+    border-width: .1em;
+    padding: .75em;
+    font-size: 1.25em;
+  }
+
+  &#{&}--smallcaps {
+    text-transform: uppercase;
+    font-size: .8em;
+    padding: 1em;
+    border-radius: 2em;
+  }
+}

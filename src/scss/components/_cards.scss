@@ -1,0 +1,12 @@
+.card,
+%card {
+  background: lighten($accent-light, 2%);
+  box-shadow: 0 0 5px 0 lighten($accent-dark, 30%);
+  padding: 1em;
+}
+
+.card {
+  &--rounded {
+    border-radius: 2px;
+  }
+}
