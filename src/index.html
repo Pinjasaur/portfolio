@@ -29,7 +29,7 @@
       </p>
     </noscript>
 
-    <header>
+    <header class="masthead">
       <div class="headers">
         <h1 class="headline">Hi, I'm Paul.</h1>
         <p class="tagline">I like to push pixels.</p>
@@ -38,21 +38,41 @@
 
     <main>
       <section id="about">
-        <h2>About</h2>
+        <header>
+          <h2>About</h2>
+        </header>
         <p>Hi, my name is <span class="branded">Paul Esch-Laurent</span>. I'm an undergraduate student at <a href="https://www.mtu.edu/" target="_blank">Michigan Technological University</a> studying <span class="branded">Computer Engineering</span>.</p>
-        <p>I love playing around in pixelated environments creating digital goodies, developing and designing for the web, and working with modern, bleeding-edge technologies. In my spare time I like to <a href="https://unsplash.com/@pinjasaur" target="_blank">take photographs</a>, <a href="https://github.com/Pinjasaur/" target="_blank">write code</a>, <a href="https://steamcommunity.com/id/pinjasaur" target="_blank">play games</a>, <a href="https://open.spotify.com/user/pinjasaur" target="_blank">jam out</a>, and occassionally <a href="https://twitter.com/pinjasaur" target="_blank">narrate my thoughts</a>.</p>
-        <p>Feel free to <a href="#portfolio">take a peak at my portfolio</a> or <a href="#contact">shoot me a message</a> if you'd like to get in touch.</p>
+        <p>I love playing around in pixelated environments creating <span class="branded">digital goodies</span>, developing and designing <span class="branded">for the web</span>, and working with modern, <span class="branded">bleeding-edge technologies</span>. In my spare time I like to <a href="https://unsplash.com/@pinjasaur" target="_blank">take photographs</a>, <a href="https://github.com/Pinjasaur/" target="_blank">write code</a>, <a href="https://steamcommunity.com/id/pinjasaur" target="_blank">play games</a>, <a href="https://open.spotify.com/user/pinjasaur" target="_blank">jam out</a>, and occassionally <a href="https://twitter.com/pinjasaur" target="_blank">narrate my thoughts</a>.</p>
+        <p>Feel free to <a href="#portfolio">take a peak at my portfolio</a> or <a href="#contact">shoot me a message</a> if you'd like to <span class="branded">get in touch</span>.</p>
+      </section>
+      <section id="portfolio">
+        <header>
+          <h2>Portfolio</h2>
+        </header>
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo consectetur sit illum laudantium aliquid voluptatum fugit deleniti ea soluta amet commodi consequatur, aliquam molestias, quos? Enim, error beatae quae perferendis.</span><span>Itaque tempora aspernatur maxime, perferendis ipsa harum ipsum. Labore excepturi natus ullam cum, quo dignissimos illum, rerum quis pariatur modi totam quae cumque impedit qui ea! Ducimus assumenda id ipsum.</span></p>
         <p>
           <a href="https://www.dropbox.com/s/ws1vczkoshn2944/Resume.pdf?dl=0" class="btn btn--primary btn--fluid btn--callout">View My R&egrave;sum&egrave;</a>
         </p>
       </section>
-      <section id="portfolio">
-        <h2>Portfolio</h2>
-        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo consectetur sit illum laudantium aliquid voluptatum fugit deleniti ea soluta amet commodi consequatur, aliquam molestias, quos? Enim, error beatae quae perferendis.</span><span>Itaque tempora aspernatur maxime, perferendis ipsa harum ipsum. Labore excepturi natus ullam cum, quo dignissimos illum, rerum quis pariatur modi totam quae cumque impedit qui ea! Ducimus assumenda id ipsum.</span></p>
-      </section>
       <section id="contact">
-        <h2>Contact</h2>
-        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea architecto consequuntur laudantium, excepturi deleniti, numquam impedit nobis dolor ipsum tenetur debitis. Magni consequatur praesentium beatae officia est! Qui, temporibus dolorum.</span><span>Nihil, eaque? Exercitationem adipisci perspiciatis quibusdam eveniet, veniam itaque voluptatem, delectus dolore minima reprehenderit ut, ipsam commodi! Doloribus laborum voluptatibus modi, nobis dolore, est sapiente commodi fugiat ipsum dicta quidem.</span></p>
+        <header>
+          <h2>Contact</h2>
+        </header>
+        <p>Go ahead and fill out this form with <span class="branded">anything you'd like to say</span> and I'll get back to you <span class="branded">as soon as possible</span>.</p>
+        <p><em>Thanks!</em></p>
+        <form action="https://formspree.io/pfeschla@mtu.edu" method="POST" class="contact">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="user@domain.tld">
+          
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Hi! Let's work together."></textarea>
+          
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value="[paulisaweso.me] Contact Form Submission" />
+          <!-- <input type="hidden" name="_next" value="/404" /> -->
+          
+          <input type="submit" value="Send" class="btn btn--primary btn--callout btn--fluid">
+        </form>
       </section>
     </main>
 

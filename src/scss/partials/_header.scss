@@ -1,4 +1,4 @@
-header {
+.masthead {
   margin: 0;
   height: 100vh;
   background-image: url(//source.unsplash.com/random);
@@ -13,6 +13,12 @@ header {
     position: relative;
     padding-left: calc((100% - 40%) / 2);
 
+    @media (max-width: map-get($breakpoints, xs)) {
+      .headline {
+        margin-top: 1em;
+      }
+    }
+
     @media (max-width: map-get($breakpoints, sm)) {
       padding-left: 0;
       justify-content: flex-start;
@@ -24,12 +30,12 @@ header {
 
   .headline {
     margin: 0;
-    font-size: 3.5em;
+    font-size: 4em;
     color: $accent-light;
     text-shadow: 1px 1px 1px $accent-dark;
   }
 
   .tagline {
-    font-size: 1.5em;
+    font-size: 1.75em;
   }
 }

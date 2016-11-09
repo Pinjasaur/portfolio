@@ -1,0 +1,19 @@
+.contact {
+  input,
+  textarea {
+    width: 100%;
+
+    &:focus {
+      outline-color: $color-primary;
+    }
+  }
+
+  textarea {
+    height: 4em;
+  }
+
+  label {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}

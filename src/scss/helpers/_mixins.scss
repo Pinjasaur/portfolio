@@ -19,6 +19,7 @@
 @mixin btn-variant($color-from, $color-to) {
   color: $color-from;
   border-color: $color-from;
+  background-color: transparent;
 
   &:hover {
     background: $color-from;
