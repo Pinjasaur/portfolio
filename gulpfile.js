@@ -100,8 +100,8 @@ gulp.task("build:js", function() {
     .pipe(plugins.jshint.reporter("jshint-stylish"));
 });
 
-// Copy misc items to build dir
-gulp.task("build:misc", function() {
+// Copy humans.txt to build dir
+gulp.task("build:humans.txt", function() {
   return gulp.src("humans.txt")
     .pipe(gulp.dest(paths.dist));
 });
@@ -109,7 +109,7 @@ gulp.task("build:misc", function() {
 // Build assets depending on if `--prod` is set
 gulp.task("build", function(callback) {
   if (production) {
-    plugins.runSequence("clean", ["build:css", "build:js"], ["build:useref", "build:misc"], callback);
+    plugins.runSequence("clean", ["build:css", "build:js"], ["build:useref", "build:humans.txt"], callback);
   } else {
     plugins.runSequence(["build:css", "build:js"], callback);
   }

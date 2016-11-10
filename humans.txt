@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Paul Esch-Laurent -- Developer -- @Pinjasaur
+    Paul Esch-Laurent -- Developer -- @Pinjasaur -- Michigan, US
 
 # THANKS
 
@@ -12,5 +12,5 @@
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    npm, Bower, Gulp
+    HTML5, CSS3, Flexbox
+    npm, Yarn, Bower, Gulp
