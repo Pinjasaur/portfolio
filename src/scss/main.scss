@@ -5,16 +5,17 @@
 @import "vendor/h5bp";
 @import "vendor/toast";
 
+// Components
+@import "components/buttons";
+@import "components/cards";
+
 // Partials
 @import "partials/base";
 @import "partials/header";
 @import "partials/main";
+@import "partials/portfolio";
 @import "partials/contact";
 @import "partials/footer";
 @import "partials/easter-eggs";
-
-// Components
-@import "components/buttons";
-@import "components/cards";
 
 @import "shame";

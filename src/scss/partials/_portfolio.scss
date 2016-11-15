@@ -1,0 +1,75 @@
+.portfolio {
+
+  .showcase {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    &__item-container {
+      float: left;
+      width: 50%;
+      padding: 1em;
+      display: flex;
+
+      @media (max-width: map-get($breakpoints, sm)) {
+        width: 100%;
+      }
+    }
+
+    .item {
+      @extend %card;
+      font-size: .9rem;
+      border-bottom: 3px solid $color-primary;
+
+      > :first-child {
+        margin-top: 0;
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+
+      &__title {
+        font-size: 1.25em;
+        margin-bottom: .7em;
+      }
+
+      &__meta {
+        @extend %clearfix;
+
+        .links,
+        .tags {
+          > * + * {
+            margin-left: .5em;
+          }
+        }
+
+        .links {
+          width: 50%;
+          float: left;
+          text-align: left;
+        }
+
+        .tags {
+          width: 50%;
+          float: left;
+          text-align: right;
+          list-style: none;
+          padding-left: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+
+          > .tag {
+            display: inline-block;
+            color: $accent-dark;
+            background: $color-tertiary;
+            border: 1px solid darken($accent-light, 35%);
+            padding: .1em .3em;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+
+}
