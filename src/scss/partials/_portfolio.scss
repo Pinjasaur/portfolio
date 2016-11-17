@@ -3,16 +3,15 @@
   .showcase {
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
+    justify-content: center;
 
     &__item-container {
-      float: left;
-      width: 50%;
       padding: 1em;
       display: flex;
+      flex-basis: 50%;
 
       @media (max-width: map-get($breakpoints, sm)) {
-        width: 100%;
+        flex-basis: 100%;
       }
     }
 

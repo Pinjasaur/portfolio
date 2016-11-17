@@ -18,9 +18,19 @@ main {
     }
   }
 
+  @media (max-width: map-get($breakpoints, sm)) {
+    section > header {
+      border-bottom: .2em solid $color-primary;
+    }
+  }
+
   header > h2 {
     position: relative;
     display: inline-block;
+
+    @media (max-width: map-get($breakpoints, sm)) {
+      margin-bottom: 0;
+    }
 
     &:before,
     &:after {
