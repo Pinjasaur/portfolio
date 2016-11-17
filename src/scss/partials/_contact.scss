@@ -17,4 +17,8 @@
     display: inline-block;
     margin-top: 1rem;
   }
+
+  input[type="submit"] {
+    cursor: pointer;
+  }
 }
