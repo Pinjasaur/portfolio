@@ -26,3 +26,18 @@
     color: $color-to;
   }
 }
+
+@mixin note-variant($color, $icon: "") {
+  border-left: 5px solid $color;
+  background: lighten($color, 50%);
+
+  @if ($icon != "") {
+    &:before {
+      content: $icon;
+      font-weight: bold;
+      font-size: 1.5em;
+      color: darken($color, 10%);
+      margin-right: .5em;
+    }
+  }
+}

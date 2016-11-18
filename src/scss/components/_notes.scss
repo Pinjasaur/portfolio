@@ -1,0 +1,21 @@
+.note,
+%note {
+  padding: 1em;
+  @include note-variant($accent-dark);
+}
+
+.note {
+  &--success {
+    @include note-variant(rgb(15, 182, 32), "✔");
+  }
+
+  &--error {
+    @include note-variant(rgb(189, 4, 4), "✘");
+  }
+
+  &--no-icon {
+    &:before {
+      display: none;
+    }
+  }
+}

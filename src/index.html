@@ -16,18 +16,19 @@
     <!-- endbuild -->
   </head>
   <body>
-    <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <noscript>
+    <div id="js-disabled-alert" class="no-js note note--error note--no-icon">
       <p>
         <strong>It looks like you're browsing with JavaScript disabled.</strong>
       </p>
       <p>
         That's fine&ndash;this website should function perfectly fine without, but if you encounter any bugs or issues, please <a href="https://github.com/Pinjasaur/portfolio/issues">let me know</a>.
       </p>
-    </noscript>
+    </div>
+
+    <script>
+      // remove JavaScript-disabled alert ASAP
+      document.getElementById("js-disabled-alert").classList.remove("no-js");
+    </script>
 
     <header class="masthead">
       <div class="headers">
@@ -134,8 +135,8 @@
         <p>
           Go ahead and fill out this form with <span class="branded">anything you'd like to say</span> and I'll get back to you <span class="branded">as soon as possible</span>.
         </p>
-        <p>
-          <em>Thanks!</em>
+        <p id="form-success" class="form-success note note--success">
+          I'll be in touch shortly. <em>Thanks!</em>
         </p>
         <form action="https://formspree.io/pfeschla@mtu.edu" method="POST" class="contact">
           <label for="name">Name</label>
@@ -149,7 +150,7 @@
 
           <input type="text" name="_gotcha" style="display:none" />
           <input type="hidden" name="_subject" value="[paulisaweso.me] Contact Form Submission" />
-          <!-- <input type="hidden" name="_next" value="/404" /> -->
+          <input type="hidden" name="_next" value="#form-success" />
 
           <input type="submit" value="Send" class="btn btn--primary btn--callout btn--fluid">
         </form>
@@ -163,9 +164,9 @@
         <a href="https://codepen.io/Pinjasaur/" target="_blank" class="btn btn--secondary btn--smallcaps btn--rounded">CodePen</a>
         <a href="https://twitter.com/pinjasaur" target="_blank" class="btn btn--secondary btn--smallcaps btn--rounded">Twitter</a>
       </p>
-      <p>
+      <small>
         <a class="accent--gray" href="https://github.com/Pinjasaur/portfolio">View the source.</a>
-      </p>
+      </small>
     </footer>
 
     <!-- build:js js/main.min.js -->

@@ -19,10 +19,12 @@ html {
   box-sizing: inherit;
 }
 
-noscript {
-  margin: 0 !important;
-  padding: 1rem;
-  border: 2px solid darken(red, 5%);
+[id="js-disabled-alert"] {
+  display: none;
+
+  &.no-js {
+    display: block;
+  }
 }
 
 ::-moz-selection {
