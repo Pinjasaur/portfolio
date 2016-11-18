@@ -37,6 +37,10 @@
         width: 280px;
       }
 
+      p + p {
+        margin-top: 1em;
+      }
+
       pre {
         color: #222;
         font-weight: bold;
@@ -60,6 +64,11 @@
   <body>
     <h1><strong>404</strong></h1>
     <p>Sorry, but the page you requested can't be found right <em>meow</em>.</p>
+    <p>
+      <a href="#0" onclick="history.go(-1); return false;">Go Back</a>
+      or
+      <a href="/">Go Home</a>
+    </p>
   </body>
 </html>
 <!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->
