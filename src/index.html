@@ -1,11 +1,16 @@
 <!doctype html>
-<html lang="en-US">
+<html class="no-js" lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Paul Esch-Laurent's Portfolio &mdash; Digital Development &amp; Design</title>
     <meta name="description" content="Paul Esch-Laurent's Portfolio.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script async>
+      // remove 'no-js' class from <html> ASAP
+      document.querySelector("html").classList.remove("no-js");
+    </script>
 
     <!-- TODO: metatags and favicons -->
 
@@ -16,7 +21,7 @@
     <!-- endbuild -->
   </head>
   <body>
-    <div id="js-disabled-alert" class="no-js note note--error note--no-icon">
+    <div class="js-disabled-alert note note--error note--no-icon" style="display: none;">
       <p>
         <strong>It looks like you're browsing with JavaScript disabled.</strong>
       </p>
@@ -24,11 +29,6 @@
         That's fine&ndash;this website should function perfectly fine without, but if you encounter any bugs or issues, please <a href="https://github.com/Pinjasaur/portfolio/issues">let me know</a>.
       </p>
     </div>
-
-    <script>
-      // remove JavaScript-disabled alert ASAP
-      document.getElementById("js-disabled-alert").classList.remove("no-js");
-    </script>
 
     <header class="masthead">
       <div class="headers">

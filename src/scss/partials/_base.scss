@@ -19,14 +19,6 @@ html {
   box-sizing: inherit;
 }
 
-[id="js-disabled-alert"] {
-  display: none;
-
-  &.no-js {
-    display: block;
-  }
-}
-
 ::-moz-selection {
   background: $color-primary;
   color: $accent-light;
@@ -37,6 +29,10 @@ html {
   background: $color-primary;
   color: $accent-light;
   text-shadow: none;
+}
+
+.no-js .js-disabled-alert {
+  display: block !important;
 }
 
 body *:not($toast-grid-column-namespace) + *:not($toast-grid-column-namespace) {
