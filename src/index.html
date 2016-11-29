@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script async>
-      // remove 'no-js' class from <html> ASAP
+      // swap 'no-js' with 'js' on <html>
       document.querySelector("html").classList.remove("no-js");
+      document.querySelector("html").classList.add("js");
     </script>
 
     <!-- TODO: metatags and favicons -->
@@ -21,7 +22,7 @@
     <!-- endbuild -->
   </head>
   <body>
-    <div class="js-disabled-alert note note--error note--no-icon" style="display: none;">
+    <div class="is-hidden-js note note--error note--no-icon">
       <p>
         <strong>It looks like you're browsing with JavaScript disabled.</strong>
       </p>

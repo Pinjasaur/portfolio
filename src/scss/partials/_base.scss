@@ -1,6 +1,3 @@
-// Base styles (e.g. typography)
-@import "typography";
-
 html {
   background: $accent-light;
   font-size: calc(.75em + .35vw);
@@ -29,10 +26,6 @@ html {
   background: $color-primary;
   color: $accent-light;
   text-shadow: none;
-}
-
-.no-js .js-disabled-alert {
-  display: block !important;
 }
 
 body *:not($toast-grid-column-namespace) + *:not($toast-grid-column-namespace) {
