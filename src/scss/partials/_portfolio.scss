@@ -29,46 +29,27 @@
       }
 
       &__title {
-        font-size: 1.25em;
+        font-size: 1.5em;
         margin-bottom: .7em;
+      }
+
+      &__subtitle {
+        font-size: 1.1em;
+        margin-bottom: .2em;
+        margin-top: 0;
+
+        + p {
+          margin-top: 0;
+        }
       }
 
       &__meta {
         @extend %clearfix;
 
-        .links,
-        .tags {
-          > * + * {
-            margin-left: .5em;
-          }
-        }
-
-        .links {
-          width: 50%;
-          float: left;
-          text-align: left;
-        }
-
-        .tags {
-          width: 50%;
-          float: left;
-          text-align: right;
-          list-style: none;
-          padding-left: 0;
-          margin-top: 0;
-          margin-bottom: 0;
-
-          > .tag {
-            display: inline-block;
-            color: $accent-dark;
-            background: $color-tertiary;
-            border: 1px solid darken($accent-light, 35%);
-            padding: .1em .3em;
-            border-radius: 2px;
-          }
+        .links > * + * {
+          margin-left: .5em;
         }
       }
     }
   }
-
 }
