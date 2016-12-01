@@ -7,13 +7,16 @@
     <meta name="description" content="Paul Esch-Laurent's Portfolio.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script async>
-      // swap 'no-js' with 'js' on <html>
-      document.querySelector("html").classList.remove("no-js");
-      document.querySelector("html").classList.add("js");
-    </script>
-
     <!-- TODO: metatags and favicons -->
+
+    <script async>
+      (function() {
+        // swap 'no-js' with 'js' on <html>
+        var html = document.querySelector("html");
+        html.classList.remove("no-js");
+        html.classList.add("js");
+      })();
+    </script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter|Inconsolata|Raleway">
     <!-- build:css css/main.min.css -->
