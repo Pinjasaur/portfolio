@@ -1,5 +1,10 @@
 (function() {
   "use strict";
 
-  // Code goes here.
+  smoothScroll.init({
+    selector: "a",
+    speed: 500,
+    easing: "easeInOutCubic"
+  });
+
 })();

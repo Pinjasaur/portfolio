@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-css": "latest"
+    "normalize-css": "^5.0.0",
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^10.1.0"
   }
 }
