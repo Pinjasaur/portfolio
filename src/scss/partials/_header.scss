@@ -1,7 +1,10 @@
 .masthead {
   margin: 0;
   height: 100vh;
-  background-image: url(//source.unsplash.com/user/pinjasaur);
+  background-image: url(https://source.unsplash.com/user/pinjasaur);
+  background-color: rgba($accent-dark, .2);
+  background-position: center center;
+  background-blend-mode: overlay;
   background-size: cover;
 
   .headers {
@@ -28,11 +31,15 @@
     }
   }
 
+  .headline,
+  .tagline {
+    color: $accent-light;
+    text-shadow: 1px 1px 1px $accent-dark;
+  }
+
   .headline {
     margin: 0;
     font-size: 4em;
-    color: $accent-light;
-    text-shadow: 1px 1px 1px $accent-dark;
   }
 
   .tagline {
