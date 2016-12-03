@@ -106,6 +106,14 @@ gulp.task("build:img", function() {
     .pipe(gulp.dest(paths.dist + "/img"));
 });
 
+// Combined SVG icons
+gulp.task("build:icons", function() {
+  return gulp.src(paths.src + "/icons/**/*.svg", { base: paths.src + "/icons" })
+    .pipe(plugins.rename({ prefix: "icon-" }))
+    .pipe(plugins.svgstore())
+    .pipe(gulp.dest(paths.dist + "/img"));
+});
+
 // Copy humans.txt to build dir
 gulp.task("build:humans.txt", function() {
   return gulp.src("humans.txt")
@@ -123,7 +131,7 @@ gulp.task("build", function(callback) {
   if (production) {
     plugins.runSequence("clean",
       ["build:css", "build:js"],
-      ["build:useref", "build:img", "build:humans.txt", "build:favicons"],
+      ["build:useref", "build:img", "build:icons", "build:humans.txt", "build:favicons"],
       callback);
   } else {
     plugins.runSequence(["build:css", "build:js"], callback);

@@ -39,15 +39,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter|Inconsolata|Raleway">
   </head>
   <body>
-    <div class="is-hidden-js note note--error note--no-icon">
-      <p>
-        <strong>It looks like you're browsing with JavaScript disabled.</strong>
-      </p>
-      <p>
-        That's fine&ndash;this website should function perfectly fine without, but if you encounter any bugs or issues, please <a href="https://github.com/Pinjasaur/portfolio/issues">let me know</a>.
-      </p>
-    </div>
-
     <header class="masthead">
       <div class="headers">
         <h1 class="headline">Hi, I'm Paul.</h1>
@@ -56,6 +47,15 @@
     </header>
 
     <main>
+      <div class="is-hidden-js note note--error note--no-icon">
+        <p>
+          <strong>It looks like you're browsing with JavaScript disabled.</strong>
+        </p>
+        <p>
+          That's fine&ndash;this website should function perfectly fine without, but if you encounter any bugs or issues, please <a href="https://github.com/Pinjasaur/portfolio/issues">let me know</a>.
+        </p>
+      </div>
+
       <section id="about">
         <header>
           <h2>Hello, world!</h2>
@@ -71,6 +71,7 @@
           Feel free to <a href="#portfolio">take a peak at my portfolio</a> or <a href="#contact">shoot me a message</a> if you'd like to <span class="branded">get in touch</span>.
         </p>
       </section>
+
       <section id="portfolio" class="portfolio">
         <header>
           <h2>Projects &amp; Experience</h2>
@@ -110,6 +111,7 @@
               </p>
             </div>
           </div>
+
           <div class="showcase__item-container">
             <div class="item">
               <h4 class="item__title">nudge</h4>
@@ -129,6 +131,7 @@
               </p>
             </div>
           </div>
+
           <div class="showcase__item-container">
             <div class="item">
               <h4 class="item__title">NicCageIt</h4>
@@ -151,6 +154,7 @@
           </div>
         </div>
       </section>
+
       <section id="contact">
         <header>
           <h2>Get in Touch</h2>
@@ -181,7 +185,14 @@
     </main>
 
     <footer>
-      <p>Developed and designed by <span class="branded">Paul Esch-Laurent</span>.</p>
+      <p>
+        Made with
+        <svg class="icon"><use xlink:href="img/icons.svg#icon-heart"></use></svg>
+        and
+        <svg class="icon"><use xlink:href="img/icons.svg#icon-code"></use></svg>
+        by
+        <span class="branded">Paul Esch-Laurent</span>.
+      </p>
       <p class="socials">
         <a href="https://github.com/Pinjasaur/" target="_blank" class="btn btn--secondary btn--smallcaps btn--rounded">GitHub</a>
         <a href="https://codepen.io/Pinjasaur/" target="_blank" class="btn btn--secondary btn--smallcaps btn--rounded">CodePen</a>
