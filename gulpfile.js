@@ -11,27 +11,26 @@ var gulp         = require("gulp"),
     },
     config = {
       banners: {
-        html: [
-                "<!--",
-                "  HTML banner!",
-                "  -->",
-                ""
-              ].join("\n"),
+        html: [].join("\n"),
         css:  [
                 "/*",
-                " * CSS banner!",
+                " * Hi there!",
+                " * This CSS has been minified and optimized.",
+                " * You can view the source code in the repository: <%= pkg.homepage %>",
                 " */",
                 ""
               ].join("\n"),
         js:   [
                 "/*",
-                " * JS banner!",
+                " * Hey there!",
+                " * This JavaScript has been minified.",
+                " * If you'd like to view the full source, visit the repository: <%= pkg.homepage %>",
                 " */",
                 ""
               ].join("\n")
       },
       autoprefixer: {
-        browsers: ["last 2 versions", "> 5%"]
+        browsers: ["last 2 versions", "> 1%"]
       },
       cssnano: {
         discardComments: {
@@ -100,16 +99,32 @@ gulp.task("build:js", function() {
     .pipe(plugins.jshint.reporter("jshint-stylish"));
 });
 
+// Build (optimize) images
+gulp.task("build:img", function() {
+  return gulp.src(paths.src + "/img/**/*.+(jpg|jpeg|gif|png|svg)")
+    .pipe(plugins.imagemin())
+    .pipe(gulp.dest(paths.dist + "/img"));
+});
+
 // Copy humans.txt to build dir
 gulp.task("build:humans.txt", function() {
   return gulp.src("humans.txt")
     .pipe(gulp.dest(paths.dist));
 });
 
+// Copy favicons to root of build directory
+gulp.task("build:favicons", function() {
+  return gulp.src(paths.src + "/favicons/*")
+    .pipe(gulp.dest(paths.dist));
+});
+
 // Build assets depending on if `--prod` is set
 gulp.task("build", function(callback) {
   if (production) {
-    plugins.runSequence("clean", ["build:css", "build:js"], ["build:useref", "build:humans.txt"], callback);
+    plugins.runSequence("clean",
+      ["build:css", "build:js"],
+      ["build:useref", "build:img", "build:humans.txt", "build:favicons"],
+      callback);
   } else {
     plugins.runSequence(["build:css", "build:js"], callback);
   }
