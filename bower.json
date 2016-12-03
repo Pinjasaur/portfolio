@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "normalize-css": "^5.0.0",
-    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^10.1.0"
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^10.1.0",
+    "svg4everybody": "~2.1.3"
   }
 }

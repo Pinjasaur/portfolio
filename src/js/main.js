@@ -7,4 +7,6 @@
     easing: "easeInOutCubic"
   });
 
+  svg4everybody();
+
 })();
