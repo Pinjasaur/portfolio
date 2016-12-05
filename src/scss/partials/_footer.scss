@@ -5,6 +5,11 @@ footer {
   color: $accent-light;
   text-align: center;
 
+  .heart {
+    animation: heartbeat 1.5s infinite;
+    fill: red;
+  }
+
   > * + * {
     margin-top: 1.5rem;
   }
