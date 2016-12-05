@@ -10,11 +10,13 @@
 
   .view-more {
     color: $accent-light;
+    // for debugging
+    // background: hotpink;
     position: absolute;
     bottom: 0;
     left: 50%;
+    padding: .5em;
     margin-bottom: 1em;
-    margin-left: -1.5em;
     transform: translateX(-50%);
     text-decoration: none;
     animation: bounce 2s infinite;
