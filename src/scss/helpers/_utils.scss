@@ -10,10 +10,27 @@
   }
 }
 
+@each $key, $value in $breakpoints {
+  .is-hidden-#{$key} {
+    @media (max-width: $value) {
+      display: none !important;
+    }
+  }
+}
+
 .push-right {
   float: right;
 }
 
 .push-left {
   float: left;
+}
+
+.centered-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centered-content {
+  text-align: center;
 }

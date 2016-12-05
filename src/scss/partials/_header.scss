@@ -16,17 +16,11 @@
     position: relative;
     padding-left: calc((100% - 40%) / 2);
 
-    @media (max-width: map-get($breakpoints, xs)) {
-      .headline {
-        margin-top: 1em;
-      }
-    }
-
     @media (max-width: map-get($breakpoints, sm)) {
       padding-left: 0;
       justify-content: flex-start;
       .headline {
-        margin-top: 2em;
+        margin-top: calc((100vh - 60vh) / 2);
       }
     }
   }
