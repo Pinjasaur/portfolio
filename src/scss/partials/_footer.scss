@@ -14,7 +14,19 @@ footer {
     margin-top: 1.5rem;
   }
 
-  .socials > .btn + .btn {
-    margin-left: 2em;
+  .btn {
+    + .btn {
+      margin-left: 2em;
+    }
+
+    @media (max-width: map-get($breakpoints, xs)) {
+      width: 100%;
+      margin-left: 0;
+
+      + .btn {
+        margin-top: 1rem;
+        margin-left: 0;
+      }
+    }
   }
 }
