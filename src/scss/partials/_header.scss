@@ -6,6 +6,24 @@
   background-position: center center;
   background-blend-mode: overlay;
   background-size: cover;
+  position: relative;
+
+  .view-more {
+    color: $accent-light;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 1em;
+    margin-left: -1.5em;
+    transform: translateX(-50%);
+    text-decoration: none;
+    animation: bounce 2s infinite;
+
+    .icon {
+      width: 3em;
+      height: 3em;
+    }
+  }
 
   .headers {
     display: flex;
