@@ -1,7 +1,11 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   background: $accent-light;
   font-size: calc(.75em + .35vw);
-  overflow-x: hidden;
 
   /**
    * Box-sizing best-practices from CSS-Tricks.
