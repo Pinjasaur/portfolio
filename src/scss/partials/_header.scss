@@ -1,7 +1,7 @@
 .masthead {
   margin: 0;
   height: 100vh;
-  background-image: url(https://source.unsplash.com/user/pinjasaur);
+  background-image: url(../img/header-background.jpg);
   background-color: rgba($accent-dark, .2);
   background-position: center center;
   background-blend-mode: overlay;
@@ -35,11 +35,11 @@
     height: 100%;
     position: relative;
     padding-left: calc((100% - 40%) / 2);
+    text-align: center;
 
     @media (max-width: map-get($breakpoints, sm)) {
       padding-left: 0;
       justify-content: flex-start;
-      text-align: center;
 
       .headline {
         margin-top: calc((100vh - 60vh) / 2);
