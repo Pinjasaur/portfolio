@@ -38,6 +38,9 @@ var gulp         = require("gulp"),
         }
       },
       htmlmin: {
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
         removeComments: true
       },
       browserSync: {
