@@ -43,7 +43,7 @@ code {
   &:after {
     content: "";
     // thanks @Squeaky4377
-    background-color: #c7c300;
+    background-color: darken($color-tertiary, 5%);
     display: block;
     width: 100%;
     height: .1em;

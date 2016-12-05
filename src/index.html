@@ -46,7 +46,7 @@
     </header>
 
     <main>
-      <div class="is-hidden-js note note--error note--no-icon">
+      <div class="is-hidden-js note note--warning">
         <p>
           <strong>It looks like you're browsing with JavaScript disabled.</strong>
         </p>
@@ -67,7 +67,7 @@
           In my spare time I like to <a href="https://unsplash.com/@pinjasaur" target="_blank">take photographs</a>, <a href="https://github.com/Pinjasaur/" target="_blank">write code</a> (<a href="https://codepen.io/Pinjasaur/" target="_blank">here, too!</a>), <a href="https://steamcommunity.com/id/pinjasaur" target="_blank">play games</a>, <a href="https://open.spotify.com/user/pinjasaur" target="_blank">jam out</a>, and occassionally <a href="https://twitter.com/pinjasaur" target="_blank">narrate my thoughts</a>.
         </p>
         <p>
-          Feel free to <a href="#portfolio">take a peak at my portfolio</a> or <a href="#contact">shoot me a message</a> if you'd like to <span class="branded">get in touch</span>.
+          Feel free to <a href="#portfolio">take a peek at my portfolio</a> or <a href="#contact">shoot me a message</a> if you'd like to get in touch.
         </p>
       </section>
 
@@ -126,6 +126,7 @@
               <p>
                 Working with common <span class="branded">*nix commands</span> like <code>grep</code> and <code>sed</code>.
                 Using <code>bash</code> <a href="http://www.tldp.org/LDP/abs/html/here-docs.html">here docs</a> to pipe a string to <code>write</code>.
+                Setting up `cron` to run the script automatically.
                 Majority of messages created via pull requests on GitHub.
               </p>
             </div>
@@ -143,7 +144,7 @@
               <p>
                 NicCageIt is a <span class="branded">hackathon-created web app</span> where users <span class="branded">upload an image</span> and <span class="branded">Nicolas Cage's face</span> is super imposed on it. I think it's pretty cool.
               </p>
-              <h5 class="item__subtitle">Challenges &amp; Highlights</h5>
+              <h5 class="item__subtitle">Highlights &amp; Challenges</h5>
               <p>
                 Hands-on experience working with HTML5 <code>input</code> and <code>canvas</code> to upload and render.
                 Utilized jQuery plugins for face recognition.
@@ -161,9 +162,11 @@
         <p>
           Go ahead and fill out this form with <span class="branded">anything you'd like to say</span> and I'll get back to you <span class="branded">as soon as possible</span>.
         </p>
-        <p id="form-success" class="form-success note note--success">
-          I'll be in touch shortly. <em>Thanks!</em>
-        </p>
+        <div id="form-success" class="is-visible-hash note note--success">
+          <p>
+            I'll be in touch shortly. <em>Thanks!</em>
+          </p>
+        </div>
         <form action="https://formspree.io/pfeschla@mtu.edu" method="POST" class="contact">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="John Smith">

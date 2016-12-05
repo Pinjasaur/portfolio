@@ -1,3 +1,19 @@
 .js .is-hidden-js {
   display: none !important;
 }
+
+.is-visible-hash {
+  display: none;
+
+  &:target {
+    display: inherit;
+  }
+}
+
+.push-right {
+  float: right;
+}
+
+.push-left {
+  float: left;
+}
