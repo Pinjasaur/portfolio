@@ -13,4 +13,4 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3, Flexbox
-    npm, Yarn, Bower, Gulp
+    Yarn, Bower, Gulp
