@@ -109,6 +109,12 @@ gulp.task("build:img", function() {
     .pipe(gulp.dest(paths.dist + "/img"));
 });
 
+// Copy documents to build directory
+gulp.task("build:docs", function() {
+  return gulp.src(paths.src + "/doc/**/*")
+    .pipe(gulp.dest(paths.dist + "/doc"));
+})
+
 // Combined SVG icons
 gulp.task("build:icons", function() {
   return gulp.src(paths.src + "/icons/**/*.svg", { base: paths.src + "/icons" })
@@ -117,7 +123,7 @@ gulp.task("build:icons", function() {
     .pipe(gulp.dest(paths.dist + "/img"));
 });
 
-// Copy humans.txt to build dir
+// Copy humans.txt to build directory
 gulp.task("build:humans.txt", function() {
   return gulp.src("humans.txt")
     .pipe(gulp.dest(paths.dist));
@@ -132,12 +138,30 @@ gulp.task("build:favicons", function() {
 // Build assets depending on if `--prod` is set
 gulp.task("build", function(callback) {
   if (production) {
-    plugins.runSequence("clean",
-      ["build:css", "build:js"],
-      ["build:useref", "build:img", "build:icons", "build:humans.txt", "build:favicons"],
-      callback);
+    plugins.runSequence(
+      "clean",
+      [
+        "build:css",
+        "build:js"
+      ],
+      [
+        "build:useref",
+        "build:img",
+        "build:docs",
+        "build:icons",
+        "build:humans.txt",
+        "build:favicons"
+      ],
+      callback
+    );
   } else {
-    plugins.runSequence(["build:css", "build:js"], callback);
+    plugins.runSequence(
+      [
+        "build:css",
+        "build:js"
+      ],
+      callback
+    );
   }
 });
 
