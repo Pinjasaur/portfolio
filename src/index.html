@@ -210,15 +210,15 @@
         </div>
         <form action="https://formspree.io/pfeschla@mtu.edu" method="POST" class="contact">
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="John Smith">
+          <input required type="text" name="name" id="name" placeholder="John Smith">
 
           <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" placeholder="user@domain.tld">
+          <input required type="email" name="email" id="email" placeholder="user@domain.tld">
 
           <label for="message">Message</label>
-          <textarea name="message" id="message" placeholder="Hi! Let's work together."></textarea>
+          <textarea required name="message" id="message" placeholder="Hi! Let's work together."></textarea>
 
-          <input type="text" name="_gotcha" style="display:none" />
+          <input type="text" name="_gotcha" class="hidden" />
           <input type="hidden" name="_subject" value="[paulisaweso.me] Contact Form Submission" />
           <input type="hidden" name="_next" value="#form-success" />
 
