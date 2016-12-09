@@ -1,8 +1,8 @@
 # portfolio
 
-This is my personal portfolio site. Feel free to contact me with questions or comments.
+This is my personal portfolio site.
 
-Unless noted otherwise, all content is under **MIT License**.
+Unless noted otherwise, all content is under **[MIT License](/LICENSE)**.
 
 ## Usage/Developing
 
