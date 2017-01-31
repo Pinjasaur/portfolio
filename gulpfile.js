@@ -3,6 +3,8 @@ var gulp         = require("gulp"),
     browserSync  = require("browser-sync").create(),
     lazypipe     = require("lazypipe"),
     pkg          = require("./package.json"),
+    // want the string between git+ and .git in the repository URL
+    repository   = pkg.repository.url.substring(4, pkg.repository.url.length - 4),
     // flag for production builds (vs development)
     production = (plugins.util.env.prod) ? true : false,
     paths = {
@@ -16,7 +18,7 @@ var gulp         = require("gulp"),
                 "/*",
                 " * Hi there!",
                 " * This CSS has been minified and optimized.",
-                " * You can view the source code in the repository: <%= pkg.homepage %>",
+                " * You can view the source code in the repository: <%= repository %>",
                 " */",
                 ""
               ].join("\n"),
@@ -24,7 +26,7 @@ var gulp         = require("gulp"),
                 "/*",
                 " * Hey there!",
                 " * This JavaScript has been minified.",
-                " * If you'd like to view the full source, visit the repository: <%= pkg.homepage %>",
+                " * If you'd like to view the full source, visit the repository: <%= repository %>",
                 " */",
                 ""
               ].join("\n")
@@ -65,19 +67,22 @@ gulp.task("build:useref", function() {
     .pipe(plugins.useref())
     // Minify CSS, add comment banner
     .pipe(plugins.if("*.css", lazypipe()
+      .pipe(plugins.rev)
       .pipe(plugins.cssnano, config.cssnano)
-      .pipe(plugins.header, config.banners.css, { pkg: pkg })()
+      .pipe(plugins.header, config.banners.css, { repository: repository })()
     ))
     // Minify JS, add comment banner
     .pipe(plugins.if("*.js", lazypipe()
+      .pipe(plugins.rev)
       .pipe(plugins.uglify)
-      .pipe(plugins.header, config.banners.js, { pkg: pkg })()
+      .pipe(plugins.header, config.banners.js, { repository: repository })()
     ))
     // Minify HTML, add comment banner
     .pipe(plugins.if("*.html", lazypipe()
       .pipe(plugins.htmlmin, config.htmlmin)
-      .pipe(plugins.header, config.banners.html, { pkg: pkg })()
+      .pipe(plugins.header, config.banners.html, { repository: repository })()
     ))
+    .pipe(plugins.revReplace())
     .pipe(gulp.dest(paths.dist));
 });
 
