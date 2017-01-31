@@ -126,6 +126,7 @@ gulp.task("build:icons", function() {
 // Copy humans.txt to build directory
 gulp.task("build:humans.txt", function() {
   return gulp.src("humans.txt")
+    .pipe(plugins.updateHumanstxtDate())
     .pipe(gulp.dest(paths.dist));
 });
 

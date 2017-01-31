@@ -10,7 +10,9 @@
     Stack Overflow
     Caffeine
 
-# TECHNOLOGY COLOPHON
+# SITE
 
-    HTML5, CSS3, Flexbox
-    Yarn, Bower, Gulp
+    Last update: 0000/00/00
+    Standards: HTML5, CSS3, Flexbox
+    Tools: Yarn, Bower, Gulp
+    Software: Atom, GitHub Desktop
