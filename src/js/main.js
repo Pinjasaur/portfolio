@@ -1,19 +1,19 @@
 (function() {
+
   "use strict";
 
-  // animate moving between anchor links
+  // animate moving between anchor hash links
   smoothScroll.init({
     selector: "a",
     speed: 500,
     easing: "easeInOutCubic"
   });
 
-  // better external SVG spiresheet support
+  // better external SVG spritesheet support
   svg4everybody();
 
   // random placeholders for the contact form fields
-  var form = document.querySelector(".contact"),
-      names = [
+  var names = [
         "Paul Bunyan",
         "Luke Skywalker",
         "Jason Bourne",
@@ -25,8 +25,8 @@
         "Hey! Did I tickle your fancy?"
       ];
 
-  form.querySelector("[id='name']").placeholder = randomFromArray(names);
-  form.querySelector("[id='message']").placeholder = randomFromArray(messages);
+  document.getElementById("name").placeholder = randomFromArray(names);
+  document.getElementById("message").placeholder = randomFromArray(messages);
 
   function randomFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
