@@ -5,10 +5,6 @@ main {
   margin-left: auto;
   margin-right: auto;
 
-  section p:last-child {
-    margin-bottom: 0;
-  }
-
   section + section {
     margin-top: 4rem;
   }
@@ -36,6 +32,12 @@ main {
   header > h2 {
     position: relative;
     display: inline-block;
+
+    > .icon {
+      vertical-align: text-top;
+      width: 1em;
+      height: 1em;
+    }
 
     @media (max-width: map-get($breakpoints, sm)) {
       margin-bottom: 0;
