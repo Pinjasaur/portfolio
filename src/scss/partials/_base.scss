@@ -31,7 +31,3 @@ html {
   color: $accent-light;
   text-shadow: none;
 }
-
-body *:not($toast-grid-column-namespace) + *:not($toast-grid-column-namespace) {
-  margin-top: 1.5rem;
-}
