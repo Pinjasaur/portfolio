@@ -1,7 +1,6 @@
 {
   "name": "portfolio",
   "description": "My personal portfolio.",
-  "main": "index.js",
   "authors": [
     "Paul Esch-Laurent"
   ],
