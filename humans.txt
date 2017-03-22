@@ -3,7 +3,10 @@
 
 # TEAM
 
-    Paul Esch-Laurent -- Developer -- @Pinjasaur -- Michigan, US
+    Me: Paul Esch-Laurent
+    Site: paulisaweso.me
+    Twitter: @Pinjasaur
+    Location: Michigan, US
 
 # THANKS
 
@@ -13,6 +16,9 @@
 # SITE
 
     Last update: 0000/00/00
-    Standards: HTML5, CSS3, Flexbox
+    Standards: HTML5, CSS3, Flexbox, SVG
+    Components:
+      - Front-end: Sass, Normalize.css
+      - Back-end: nginx, Let's Encrypt
     Tools: Yarn, Bower, Gulp
-    Software: Atom, GitHub Desktop
+    Software: Atom, Sublime Text, GitHub Desktop
