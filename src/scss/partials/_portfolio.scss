@@ -5,13 +5,45 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    &__item-container {
+    .item-container {
       padding: 1em;
       display: flex;
       flex-basis: 50%;
 
+      &.featured {
+        order: -1;
+        margin-right: auto;
+        margin-left: auto;
+
+        .item {
+          position: relative;
+          overflow: hidden;
+
+          &:after {
+            content: "Featured";
+            font-size: 1.1em;
+            text-transform: uppercase;
+            text-align: center;
+            background: $color-secondary;
+            color: $accent-light;
+            padding: .3em;
+            width: 200px;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 30px;
+            right: -50px;
+          }
+
+          &__title {
+            padding-right: 100px;
+          }
+        }
+
+      }
+
       @media (max-width: map-get($breakpoints, sm)) {
-        flex-basis: 100%;
+        flex-basis: 100% !important;
       }
     }
 
