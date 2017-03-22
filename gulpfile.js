@@ -95,7 +95,7 @@ gulp.task("build:css", function() {
     .pipe(plugins.sourcemaps.init())
     .pipe(plugins.sass.sync(config.sass))
     .pipe(plugins.autoprefixer(config.autoprefixer))
-    .pipe(plugins.sourcemaps.write("./"))
+    .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest(paths.src + "/css"))
     .pipe(browserSync.reload({ stream: true }));
 });
