@@ -42,7 +42,7 @@
 
       }
 
-      @media (max-width: map-get($breakpoints, sm)) {
+      @include bp(sm) {
         flex-basis: 100% !important;
       }
     }

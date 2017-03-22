@@ -12,7 +12,7 @@
 
 @each $key, $value in $breakpoints {
   .is-hidden-#{$key} {
-    @media (max-width: $value) {
+    @include bp($key) {
       display: none !important;
     }
   }

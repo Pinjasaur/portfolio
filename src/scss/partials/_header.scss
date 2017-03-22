@@ -37,7 +37,7 @@
     padding-right: calc((100% - 40%) / 2);
     text-align: center;
 
-    @media (max-width: map-get($breakpoints, sm)) {
+    @include bp(sm) {
       padding-right: 0;
       justify-content: flex-start;
 

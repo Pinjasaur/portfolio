@@ -19,7 +19,7 @@ footer {
       margin-left: 2em;
     }
 
-    @media (max-width: map-get($breakpoints, xs)) {
+    @include bp(xs) {
       width: 100%;
       margin-left: 0;
 

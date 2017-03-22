@@ -1,3 +1,13 @@
+@mixin bp($point, $direction: max) {
+  @if map-has-key($breakpoints, $point) {
+    $point: map-get($breakpoints, $point);
+  }
+
+  @media (#{$direction}-width: #{$point}) {
+    @content;
+  }
+}
+
 @mixin anchor-variant($color) {
   &:link {
     color: $color;

@@ -14,7 +14,7 @@ main {
     max-width: 100%;
   }
 
-  @media (max-width: map-get($breakpoints, sm)) {
+  @include bp(sm) {
     padding: 1rem;
     max-width: 100%;
 
@@ -23,7 +23,7 @@ main {
     }
   }
 
-  @media (max-width: map-get($breakpoints, sm)) {
+  @include bp(sm) {
     section > header {
       border-bottom: .2em solid $color-primary;
     }
@@ -39,7 +39,7 @@ main {
       height: 1em;
     }
 
-    @media (max-width: map-get($breakpoints, sm)) {
+    @include bp(sm) {
       margin-bottom: 0;
     }
 
@@ -54,7 +54,7 @@ main {
       top: 50%;
       transform: translateY(-50%);
 
-      @media (max-width: map-get($breakpoints, sm)) {
+      @include bp(sm) {
         display: none;
       }
     }

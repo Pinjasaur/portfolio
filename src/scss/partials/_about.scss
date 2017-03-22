@@ -6,19 +6,19 @@
   padding: .5em;
   box-shadow: 0 0 .4em rgba($accent-dark, .75);
 
-  @media (max-width: map-get($breakpoints, lg)) {
+  @include bp(lg) {
     max-width: 90%;
   }
 
-  @media (max-width: map-get($breakpoints, md)) {
+  @include bp(md) {
     max-width: 80%;
   }
 
-  @media (max-width: map-get($breakpoints, sm)) {
+  @include bp(sm) {
     max-width: 60%;
   }
 
-  @media (max-width: map-get($breakpoints, xs)) {
+  @include bp(xs) {
     max-width: 50%;
   }
 
