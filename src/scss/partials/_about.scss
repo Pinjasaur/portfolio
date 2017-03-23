@@ -1,28 +1,40 @@
+.row {
+  @extend %clearfix;
+  margin-left: -2rem;
+
+  > .column {
+    float: left;
+    width: 50%;
+    padding-left: 2rem;
+
+    @include bp(md) {
+      width: 100%;
+    }
+  }
+}
+
 .headshot {
   display: inline-block;
-  text-align: center;
   margin: 0;
   margin-top: 1em;
   padding: .5em;
   box-shadow: 0 0 .4em rgba($accent-dark, .75);
 
+  &,
+  > img {
+    border-radius: 100%;
+  }
+
   @include bp(lg) {
-    max-width: 90%;
+    margin-top: 2.5em;
   }
 
   @include bp(md) {
-    max-width: 80%;
+    margin-bottom: 1em;
   }
 
   @include bp(sm) {
-    max-width: 60%;
-  }
-
-  @include bp(xs) {
+    margin-top: 2em;
     max-width: 50%;
-  }
-
-  > figcaption {
-    margin-top: .5em;
   }
 }

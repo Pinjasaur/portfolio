@@ -8,22 +8,40 @@
   &:target {
     display: inherit;
   }
+
+  &.block:target {
+    display: block;
+  }
+
+  &.inline-block:target {
+    display: inline-block;
+  }
+
+  &.inline:target {
+    display: inline;
+  }
 }
 
-@each $key, $value in $breakpoints {
-  .is-hidden-#{$key} {
-    @include bp($key) {
+@each $break, $point in $breakpoints {
+  .is-hidden-#{$break} {
+    @include bp($break) {
+      display: none !important;
+    }
+  }
+
+  .is-visible-#{$break} {
+    @media (min-width: $point) {
       display: none !important;
     }
   }
 }
 
 .push-right {
-  float: right;
+  float: right !important;
 }
 
 .push-left {
-  float: left;
+  float: left !important;
 }
 
 .centered-block {

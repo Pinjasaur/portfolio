@@ -36,7 +36,7 @@
           }
 
           &__title {
-            padding-right: 100px;
+            padding-right: 80px;
           }
         }
 
@@ -44,6 +44,8 @@
 
       @include bp(sm) {
         flex-basis: 100% !important;
+        padding-left: 0;
+        padding-right: 0;
       }
     }
 
