@@ -184,3 +184,6 @@ gulp.task("serve", ["build"], function() {
   gulp.watch(paths.src + "/js/**/*.js", browserSync.reload);
   gulp.watch(paths.src + "/*.html", browserSync.reload);
 });
+
+// Default to `serve`
+gulp.task("default", ["serve"]);
