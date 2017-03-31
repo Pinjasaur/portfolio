@@ -245,11 +245,16 @@
           </p>
         </div>
         <form action="https://formspree.io/pfeschla@mtu.edu" method="POST" class="contact">
-          <label for="name">Name</label>
-          <input required type="text" name="name" id="name" placeholder="John Doe">
-
-          <label for="email">E-mail</label>
-          <input required type="email" name="email" id="email" placeholder="user@domain.tld">
+          <div class="row">
+            <div class="column--half">
+              <label for="name">Name</label>
+              <input required type="text" name="name" id="name" placeholder="John Doe">
+            </div>
+            <div class="column--half">
+              <label for="email">E-mail</label>
+              <input required type="email" name="email" id="email" placeholder="user@domain.tld">
+            </div>
+          </div>
 
           <label for="message">Message</label>
           <textarea required name="message" id="message" placeholder="Hi! Let's work together."></textarea>
