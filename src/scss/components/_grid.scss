@@ -1,11 +1,11 @@
 .row {
   @extend %clearfix;
-  margin-left: -2rem;
+  margin-left: -$grid-gutter;
 
   > .column {
     float: left;
     width: 50%;
-    padding-left: 2rem;
+    padding-left: $grid-gutter;
 
     @include bp(md) {
       width: 100%;
