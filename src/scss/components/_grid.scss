@@ -1,0 +1,14 @@
+.row {
+  @extend %clearfix;
+  margin-left: -2rem;
+
+  > .column {
+    float: left;
+    width: 50%;
+    padding-left: 2rem;
+
+    @include bp(md) {
+      width: 100%;
+    }
+  }
+}
