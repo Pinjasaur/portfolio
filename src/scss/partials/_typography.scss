@@ -1,7 +1,9 @@
 html {
+  font-size: calc(.75em + .35vw);
   font-family: $font-primary;
   line-height: 1.5;
   color: lighten($accent-dark, 10%);
+  background: $accent-light;
 }
 
 h1,
