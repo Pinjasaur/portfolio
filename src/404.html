@@ -12,7 +12,7 @@
       }
 
       html {
-        color: #888;
+        color: #333;
         display: table;
         font-family: sans-serif;
         height: 100%;
@@ -27,28 +27,29 @@
       }
 
       h1 {
-        color: #555;
+        color: #111;
         font-size: 3em;
         font-weight: 400;
       }
 
+      img {
+        margin-top: .5em;
+        margin-bottom: 1em;
+      }
+
       p {
         margin: 0 auto;
-        width: 280px;
+        width: 250px;
       }
 
       p + p {
         margin-top: 1em;
       }
 
-      pre {
-        color: #222;
-        font-weight: bold;
-      }
+      @media only screen and (max-width: 250px) {
 
-      @media only screen and (max-width: 280px) {
-
-        body, p {
+        body,
+        p {
           width: 95%;
         }
 
@@ -63,6 +64,7 @@
   </head>
   <body>
     <h1><strong>404</strong></h1>
+    <img src="img/404.gif" alt="404">
     <p>Sorry, but the page you requested can't be found right <em>meow</em>.</p>
     <p>
       <a href="#0" onclick="history.go(-1); return false;">Go Back</a>
