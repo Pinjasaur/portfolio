@@ -4,7 +4,7 @@
 # TEAM
 
     Me: Paul Esch-Laurent
-    Site: paulisaweso.me
+    Site: window.location.hostname
     Twitter: @Pinjasaur
     Location: Michigan, US
 
@@ -19,6 +19,6 @@
     Standards: HTML5, CSS3, Flexbox, SVG
     Components:
       - Front-end: Sass, Normalize.css
-      - Back-end: nginx, Let's Encrypt
+      - Back-end: NGINX, Let's Encrypt
     Tools: Yarn, Bower, Gulp
     Software: Atom, Sublime Text, GitHub Desktop
