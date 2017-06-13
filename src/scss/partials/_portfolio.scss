@@ -53,6 +53,10 @@
       @extend %card;
       border-bottom: 3px solid $color-primary;
 
+      @include bp(sm) {
+        border-bottom-width: 2px;
+      }
+
       > :first-child {
         margin-top: 0;
       }
