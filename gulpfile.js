@@ -125,7 +125,7 @@ gulp.task("build:icons", function() {
   return gulp.src(paths.src + "/icons/**/*.svg", { base: paths.src + "/icons" })
     .pipe(plugins.rename({ prefix: "icon-" }))
     .pipe(plugins.svgstore())
-    .pipe(gulp.dest(paths.dist + "/img"));
+    .pipe(plugins.if(production, gulp.dest(paths.dist + "/img"), gulp.dest(paths.src + "/img")));
 });
 
 // Copy humans.txt to build directory
@@ -146,10 +146,7 @@ gulp.task("build", function(callback) {
   if (production) {
     plugins.runSequence(
       "clean",
-      [
-        "build:css",
-        "build:js"
-      ],
+      "build:css",
       [
         "build:useref",
         "build:img",
@@ -164,7 +161,7 @@ gulp.task("build", function(callback) {
     plugins.runSequence(
       [
         "build:css",
-        "build:js"
+        "build:icons"
       ],
       callback
     );
@@ -182,6 +179,7 @@ gulp.task("serve", ["build"], function() {
   browserSync.init(config.browserSync);
   gulp.watch(paths.src + "/scss/**/*.scss", ["build:css"]);
   gulp.watch(paths.src + "/js/**/*.js", browserSync.reload);
+  gulp.watch(paths.src + "/icons/**/*.svg", ["build:icons"]);
   gulp.watch(paths.src + "/*.html", browserSync.reload);
 });
 
