@@ -69,3 +69,14 @@ a {
     @include anchor-variant(darken($accent-light, 40%));
   }
 }
+
+// Drop-cap for first paragraph
+section:first-of-type p:first-of-type:first-letter {
+  color: $color-primary;
+  float: left;
+  font-family: $font-secondary;
+  font-size: 3.1em;
+  line-height: .8;
+  padding-top: .13em;
+  padding-right: .1em;
+}
