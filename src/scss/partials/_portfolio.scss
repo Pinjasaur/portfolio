@@ -51,7 +51,6 @@
 
     .item {
       @extend %card;
-      font-size: .9rem;
       border-bottom: 3px solid $color-primary;
 
       > :first-child {
