@@ -25,7 +25,7 @@ main {
 
   @include bp(sm) {
     section > header {
-      border-bottom: .2em solid $color-primary;
+      border-bottom: 2px solid $color-primary;
     }
   }
 
