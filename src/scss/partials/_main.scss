@@ -30,6 +30,7 @@ main {
   }
 
   header > h2 {
+    font-size: 2em;
     position: relative;
     display: inline-block;
 
@@ -40,6 +41,7 @@ main {
     }
 
     @include bp(sm) {
+      font-size: 1.75em;
       margin-bottom: 0;
     }
 
