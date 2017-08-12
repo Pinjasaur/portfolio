@@ -6,14 +6,26 @@ var gulp         = require("gulp"),
     // want the string between git+ and .git in the repository URL
     repository   = pkg.repository.url.substring(4, pkg.repository.url.length - 4),
     // flag for production builds (vs development)
-    production = (plugins.util.env.prod) ? true : false,
+    production = (plugins.util.env.prod || plugins.util.env.production) ? true : false,
     paths = {
       src: "src",
       dist: "build"
     },
     config = {
       banners: {
-        html: [].join("\n"),
+        html: [
+                "<!--",
+                "                     _ _                                                   ",
+                "   _ __   __ _ _   _| (_)___  __ ___      _____  ___  ___   _ __ ___   ___ ",
+                "  | '_ \\ / _` | | | | | / __|/ _` \\ \\ /\\ / / _ \\/ __|/ _ \\ | '_ ` _ \\ / _ \\",
+                "  | |_) | (_| | |_| | | \\__ \\ (_| |\\ V  V /  __/\\__ \\ (_) || | | | | |  __/",
+                "  | .__/ \\__,_|\\__,_|_|_|___/\\__,_| \\_/\\_/ \\___||___/\\___(_)_| |_| |_|\\___|",
+                "  |_|",
+                "",
+                "  Hi! You can reach me at " + pkg.author.email + " with any questions, comments, or cat GIFs.",
+                "",
+                "-->"
+        ].join("\n"),
         css:  [
                 "/*",
                 " * Hi there!",
@@ -80,7 +92,8 @@ gulp.task("build:useref", function() {
     // Minify HTML, add comment banner
     .pipe(plugins.if("*.html", lazypipe()
       .pipe(plugins.htmlmin, config.htmlmin)
-      .pipe(plugins.header, config.banners.html, { repository: repository })()
+      .pipe(plugins.replace, /^(<!doctype html>)/i, "$1" + config.banners.html)()
+      // .pipe(plugins.header, config.banners.html, { repository: repository })()
     ))
     .pipe(plugins.revReplace())
     .pipe(gulp.dest(paths.dist));
