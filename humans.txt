@@ -1,4 +1,4 @@
-# humanstxt.org/
+# humanstxt.org
 # The humans responsible & technology colophon
 
 # TEAM
@@ -21,4 +21,4 @@
       - Front-end: Sass, Normalize.css
       - Back-end: NGINX, Let's Encrypt
     Tools: Yarn, Bower, Gulp
-    Software: Atom, Sublime Text, GitHub Desktop
+    Software: VS Code, Atom, Sublime Text, GitHub Desktop
