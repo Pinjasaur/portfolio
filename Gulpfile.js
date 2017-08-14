@@ -1,10 +1,11 @@
 var gulp         = require("gulp"),
     plugins      = require("gulp-load-plugins")(),
-    browserSync  = require("browser-sync").create(),
+    server       = require("browser-sync").create(),
     lazypipe     = require("lazypipe"),
+    runSequence  = require("run-sequence"),
     pkg          = require("./package.json"),
     // want the string between git+ and .git in the repository URL
-    repository   = pkg.repository.url.substring(4, pkg.repository.url.length - 4),
+    repository = pkg.repository.url.substring(4, pkg.repository.url.length - 4),
     // flag for production builds (vs development)
     production = (plugins.util.env.prod || plugins.util.env.production) ? true : false,
     paths = {
@@ -15,8 +16,8 @@ var gulp         = require("gulp"),
       banners: {
         html: [
                 "<!--",
-                "                     _ _                                                   ",
-                "   _ __   __ _ _   _| (_)___  __ ___      _____  ___  ___   _ __ ___   ___ ",
+                "",
+                "   _ __   __ _ _   _| (_)___  __ ___      _____  ___  ___   _ __ ___   ___",
                 "  | '_ \\ / _` | | | | | / __|/ _` \\ \\ /\\ / / _ \\/ __|/ _ \\ | '_ ` _ \\ / _ \\",
                 "  | |_) | (_| | |_| | | \\__ \\ (_| |\\ V  V /  __/\\__ \\ (_) || | | | | |  __/",
                 "  | .__/ \\__,_|\\__,_|_|_|___/\\__,_| \\_/\\_/ \\___||___/\\___(_)_| |_| |_|\\___|",
@@ -25,12 +26,12 @@ var gulp         = require("gulp"),
                 "  Hi! You can reach me at " + pkg.author.email + " with any questions, comments, or cat GIFs.",
                 "",
                 "-->"
-        ].join("\n"),
+              ].join("\n"),
         css:  [
                 "/*",
                 " * Hi there!",
                 " * This CSS has been minified and optimized.",
-                " * You can view the source code in the repository: <%= repository %>",
+                " * You can view the source code in the repository: " + repository,
                 " */",
                 ""
               ].join("\n"),
@@ -38,24 +39,13 @@ var gulp         = require("gulp"),
                 "/*",
                 " * Hey there!",
                 " * This JavaScript has been minified.",
-                " * If you'd like to view the full source, visit the repository: <%= repository %>",
+                " * If you'd like to view the full source, visit the repository: " + repository,
                 " */",
                 ""
               ].join("\n")
       },
       autoprefixer: {
         browsers: ["last 2 versions", "> 1%"]
-      },
-      cssnano: {
-        discardComments: {
-          removeAll: true
-        }
-      },
-      htmlmin: {
-        collapseWhitespace: true,
-        minifyJS: true,
-        minifyCSS: true,
-        removeComments: true
       },
       browserSync: {
         server: {
@@ -70,6 +60,20 @@ var gulp         = require("gulp"),
                 (pkg.name.trim().toLowerCase().split(/[^a-zA-Z0-9]/g)[0] + // [1]
                 Math.random().toString(36).substr(2, 6)) :                 // [2]
                 false,
+      },
+      cssnano: {
+        discardComments: {
+          removeAll: true
+        }
+      },
+      htmlmin: {
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
+        removeComments: true
+      },
+      sass: {
+        outputStyle: "expanded"
       }
     };
 
@@ -81,19 +85,18 @@ gulp.task("build:useref", function() {
     .pipe(plugins.if("*.css", lazypipe()
       .pipe(plugins.rev)
       .pipe(plugins.cssnano, config.cssnano)
-      .pipe(plugins.header, config.banners.css, { repository: repository })()
+      .pipe(plugins.header, config.banners.css)()
     ))
     // Minify JS, add comment banner
     .pipe(plugins.if("*.js", lazypipe()
       .pipe(plugins.rev)
       .pipe(plugins.uglify)
-      .pipe(plugins.header, config.banners.js, { repository: repository })()
+      .pipe(plugins.header, config.banners.js)()
     ))
     // Minify HTML, add comment banner
     .pipe(plugins.if("*.html", lazypipe()
       .pipe(plugins.htmlmin, config.htmlmin)
       .pipe(plugins.replace, /^(<!doctype html>)/i, "$1" + config.banners.html)()
-      // .pipe(plugins.header, config.banners.html, { repository: repository })()
     ))
     .pipe(plugins.revReplace())
     .pipe(gulp.dest(paths.dist));
@@ -103,21 +106,13 @@ gulp.task("build:useref", function() {
 gulp.task("build:css", function() {
   return gulp.src(paths.src + "/scss/*.scss")
     .pipe(plugins.plumber())
-    // need to use sass.sync() for `plumber` to work correctly and not hang
-    // https://github.com/floatdrop/gulp-plumber/issues/32#issuecomment-106589180
     .pipe(plugins.sourcemaps.init())
+    // Have to use sass.sync (https://github.com/dlmanning/gulp-sass/issues/90)
     .pipe(plugins.sass.sync(config.sass))
     .pipe(plugins.autoprefixer(config.autoprefixer))
-    .pipe(plugins.sourcemaps.write())
+    .pipe(plugins.sourcemaps.write("."))
     .pipe(gulp.dest(paths.src + "/css"))
-    .pipe(browserSync.reload({ stream: true }));
-});
-
-// Build the JS (lint)
-gulp.task("build:js", function() {
-  return gulp.src(paths.src + "/js/*.js")
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter("jshint-stylish"));
+    .pipe(server.stream({ match: "**/*.css" }));
 });
 
 // Build (optimize) images
@@ -154,10 +149,10 @@ gulp.task("build:favicons", function() {
     .pipe(gulp.dest(paths.dist));
 });
 
-// Build assets depending on if `--prod` is set
-gulp.task("build", function(callback) {
+// Build assets depending on if `production` is set
+gulp.task("build", function(done) {
   if (production) {
-    plugins.runSequence(
+    runSequence(
       "clean",
       "build:css",
       [
@@ -168,15 +163,15 @@ gulp.task("build", function(callback) {
         "build:humans.txt",
         "build:favicons"
       ],
-      callback
+      done
     );
   } else {
-    plugins.runSequence(
+    runSequence(
       [
         "build:css",
         "build:icons"
       ],
-      callback
+      done
     );
   }
 });
@@ -189,11 +184,11 @@ gulp.task("clean", function() {
 
 // Serve the app via `browser-sync` and watch for changes and reload
 gulp.task("serve", ["build"], function() {
-  browserSync.init(config.browserSync);
+  server.init(config.browserSync);
   gulp.watch(paths.src + "/scss/**/*.scss", ["build:css"]);
-  gulp.watch(paths.src + "/js/**/*.js", browserSync.reload);
+  gulp.watch(paths.src + "/js/**/*.js",     server.reload);
   gulp.watch(paths.src + "/icons/**/*.svg", ["build:icons"]);
-  gulp.watch(paths.src + "/*.html", browserSync.reload);
+  gulp.watch(paths.src + "/*.html",         server.reload);
 });
 
 // Default to `serve`
