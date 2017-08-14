@@ -17,12 +17,6 @@ html {
   box-sizing: inherit;
 }
 
-::-moz-selection {
-  background: $color-primary;
-  color: $accent-light;
-  text-shadow: none;
-}
-
 ::selection {
   background: $color-primary;
   color: $accent-light;
