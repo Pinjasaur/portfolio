@@ -122,7 +122,7 @@ gulp.task("build:img", function() {
 // Copy documents
 gulp.task("build:docs", function() {
   return gulp.src(paths.src + "/doc/**/*")
-    .pipe(gulp.dest(paths.tmp + "/doc"));
+    .pipe(gulp.dest(paths.dist + "/doc"));
 })
 
 // Combine SVG icons
