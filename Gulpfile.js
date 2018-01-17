@@ -62,10 +62,8 @@ var gulp         = require("gulp"),
                 Math.random().toString(36).substr(2, 6)) :                 // [2]
                 false,
       },
-      cssnano: {
-        discardComments: {
-          removeAll: true
-        }
+      csso: {
+        comments: false
       },
       htmlmin: {
         collapseWhitespace: true,
@@ -85,7 +83,7 @@ gulp.task("build:useref", function() {
     // Minify CSS, add comment banner
     .pipe(plugins.if("*.css", lazypipe()
       .pipe(plugins.rev)
-      .pipe(plugins.cssnano, config.cssnano)
+      .pipe(plugins.csso, config.csso)
       .pipe(plugins.header, config.banners.css)()
     ))
     // Minify JS, add comment banner
