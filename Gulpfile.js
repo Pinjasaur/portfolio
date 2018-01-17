@@ -10,7 +10,8 @@ var gulp         = require("gulp"),
     production = (plugins.util.env.prod || plugins.util.env.production) ? true : false,
     paths = {
       src: "src",
-      dist: "build"
+      dist: "build",
+      tmp: ".tmp"
     },
     config = {
       banners: {
@@ -82,13 +83,11 @@ gulp.task("build:useref", function() {
     .pipe(plugins.useref())
     // Minify CSS, add comment banner
     .pipe(plugins.if("*.css", lazypipe()
-      .pipe(plugins.rev)
       .pipe(plugins.csso, config.csso)
       .pipe(plugins.header, config.banners.css)()
     ))
     // Minify JS, add comment banner
     .pipe(plugins.if("*.js", lazypipe()
-      .pipe(plugins.rev)
       .pipe(plugins.uglify)
       .pipe(plugins.header, config.banners.js)()
     ))
@@ -97,8 +96,7 @@ gulp.task("build:useref", function() {
       .pipe(plugins.htmlmin, config.htmlmin)
       .pipe(plugins.replace, /^(<!doctype html>)/i, "$1" + config.banners.html)()
     ))
-    .pipe(plugins.revReplace())
-    .pipe(gulp.dest(paths.dist));
+    .pipe(gulp.dest(paths.tmp));
 });
 
 // Build the SCSS (Autoprefixer, Sourcemaps)
@@ -118,33 +116,46 @@ gulp.task("build:css", function() {
 gulp.task("build:img", function() {
   return gulp.src(paths.src + "/img/**/*.+(jpg|jpeg|gif|png|svg)")
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest(paths.dist + "/img"));
+    .pipe(gulp.dest(paths.tmp + "/img"));
 });
 
-// Copy documents to build directory
+// Copy documents
 gulp.task("build:docs", function() {
   return gulp.src(paths.src + "/doc/**/*")
-    .pipe(gulp.dest(paths.dist + "/doc"));
+    .pipe(gulp.dest(paths.tmp + "/doc"));
 })
 
-// Combined SVG icons
+// Combine SVG icons
 gulp.task("build:icons", function() {
   return gulp.src(paths.src + "/icons/**/*.svg", { base: paths.src + "/icons" })
     .pipe(plugins.rename({ prefix: "icon-" }))
     .pipe(plugins.svgstore())
-    .pipe(plugins.if(production, gulp.dest(paths.dist + "/img"), gulp.dest(paths.src + "/img")));
+    .pipe(plugins.if(production, gulp.dest(paths.tmp + "/img"), gulp.dest(paths.src + "/img")));
 });
 
-// Copy humans.txt to build directory
+// Copy humans.txt
 gulp.task("build:humans.txt", function() {
   return gulp.src("humans.txt")
     .pipe(plugins.updateHumanstxtDate())
     .pipe(gulp.dest(paths.dist));
 });
 
-// Copy favicons to root of build directory
+// Copy favicons to root
 gulp.task("build:favicons", function() {
   return gulp.src(paths.src + "/favicons/*")
+    .pipe(gulp.dest(paths.tmp));
+});
+
+// Revision assets
+gulp.task("build:rev", function() {
+  return gulp.src(paths.tmp + "/**")
+    .pipe(plugins.revAll.revision({
+      dontRenameFile: [
+        /\.html/g,
+        /favicon.ico/g,
+        /social.jpg/g
+      ]
+    }))
     .pipe(gulp.dest(paths.dist));
 });
 
@@ -162,6 +173,7 @@ gulp.task("build", function(done) {
         "build:humans.txt",
         "build:favicons"
       ],
+      "build:rev",
       done
     );
   } else {
@@ -175,9 +187,12 @@ gulp.task("build", function(done) {
   }
 });
 
-// Clean the dist directory
+// Clean directories
 gulp.task("clean", function() {
-  return gulp.src(paths.dist, { read: false })
+  return gulp.src([
+      paths.dist,
+      paths.tmp
+    ], { read: false })
     .pipe(plugins.clean({ force: true }));
 });
 
