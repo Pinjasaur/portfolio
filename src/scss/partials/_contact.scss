@@ -22,11 +22,3 @@
     cursor: pointer;
   }
 }
-
-.form-success {
-  display: none;
-
-  &:target {
-    display: block;
-  }
-}
