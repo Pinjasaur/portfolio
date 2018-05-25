@@ -60,13 +60,20 @@ code {
 
 a {
   @include anchor-variant($color-primary);
-}
 
-a {
   // Gotta please our pals across the pond :)
   &.accent--gray,
   &.accent--grey {
     @include anchor-variant(darken($accent-light, 40%));
+  }
+
+  &.accent--bare {
+    color: currentColor;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
   }
 }
 
