@@ -3,6 +3,8 @@
   textarea {
     width: 100%;
     font-family: $font-primary;
+    border: 1px solid $accent-dark;
+    padding: .5rem;
 
     &:focus {
       outline-color: $color-primary;
@@ -10,7 +12,7 @@
   }
 
   textarea {
-    height: 4em;
+    height: 5rem;
   }
 
   label {
