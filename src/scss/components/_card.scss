@@ -1,6 +1,6 @@
 .card,
 %card {
   background: lighten($accent-light, 2%);
-  box-shadow: 0 0 3px 0 lighten($accent-dark, 30%);
+  box-shadow: 0 0 15px 0 rgba(lighten($accent-dark, 30%), .25);
   padding: 1em;
 }
