@@ -87,3 +87,11 @@ section:first-of-type p:first-of-type:first-letter {
   padding-top: .13em;
   padding-right: .1em;
 }
+
+ul {
+  list-style-type: square;
+
+  @include bp(sm) {
+    padding-left: 1rem;
+  }
+}
