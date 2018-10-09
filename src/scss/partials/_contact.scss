@@ -3,12 +3,9 @@
   textarea {
     width: 100%;
     font-family: $font-primary;
-    border: 1px solid $accent-dark;
     padding: .5rem;
-
-    &:focus {
-      outline-color: $color-primary;
-    }
+    box-shadow: 0 0 15px 0 rgba(lighten($accent-dark, 30%), .25);
+    border: none;
   }
 
   textarea {

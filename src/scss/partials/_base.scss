@@ -17,6 +17,10 @@ html {
   box-sizing: inherit;
 }
 
+:focus {
+  outline-color: $color-primary;
+}
+
 ::selection {
   background: $color-primary;
   color: $accent-light;
