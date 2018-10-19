@@ -27,6 +27,12 @@
 
   document.getElementById("name").placeholder = randomFromArray(names);
   document.getElementById("message").placeholder = randomFromArray(messages);
+  
+  // For the luls
+  console.log(
+    '%cpaulisaweso.me',
+    'display: inline-block; padding: .5rem; background-color: #5c1492; color: #fff; border-radius: .25rem; font-family: monospace;'
+  );
 
   function randomFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
