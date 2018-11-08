@@ -26,6 +26,7 @@
       ];
 
   document.getElementById("name").placeholder = randomFromArray(names);
+  document.getElementById("email").placeholder = document.getElementById("name").placeholder.toLowerCase().replace(" ", ".") + "@domain.tld";
   document.getElementById("message").placeholder = randomFromArray(messages);
   
   // For the luls
