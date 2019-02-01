@@ -133,10 +133,16 @@ gulp.task("build:icons", function() {
     .pipe(plugins.if(production, gulp.dest(paths.tmp + "/img"), gulp.dest(paths.src + "/img")));
 });
 
-// Copy humans.txt
+// Copy & update-date on humans.txt
 gulp.task("build:humans.txt", function() {
-  return gulp.src("humans.txt")
+  return gulp.src(paths.src + "/humans.txt")
     .pipe(plugins.updateHumanstxtDate())
+    .pipe(gulp.dest(paths.dist));
+});
+
+// Copy robots.txt
+gulp.task("build:robots.txt", function () {
+  return gulp.src(paths.src + "/robots.txt")
     .pipe(gulp.dest(paths.dist));
 });
 
@@ -171,6 +177,7 @@ gulp.task("build", function(done) {
         "build:docs",
         "build:icons",
         "build:humans.txt",
+        "build:robots.txt",
         "build:favicons"
       ],
       "build:rev",
