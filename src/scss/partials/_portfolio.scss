@@ -10,7 +10,7 @@
       display: flex;
       flex-basis: 50%;
 
-      &.featured {
+      &.is-featured {
         order: -1;
         margin-right: auto;
         margin-left: auto;
