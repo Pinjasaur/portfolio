@@ -1,0 +1,5 @@
+# www.robotstxt.org/
+
+# Disallow crawling of /docs/
+User-agent: *
+Disallow: /docs/

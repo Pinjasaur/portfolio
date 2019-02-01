@@ -121,8 +121,8 @@ gulp.task("build:img", function() {
 
 // Copy documents
 gulp.task("build:docs", function() {
-  return gulp.src(paths.src + "/doc/**/*")
-    .pipe(gulp.dest(paths.dist + "/doc"));
+  return gulp.src(paths.src + "/docs/**/*")
+    .pipe(gulp.dest(paths.dist + "/docs"));
 })
 
 // Combine SVG icons
