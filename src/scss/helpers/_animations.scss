@@ -21,3 +21,12 @@
     transform: scale(1.1);
   }
 }
+
+@keyframes headliner {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}

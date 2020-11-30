@@ -6,7 +6,7 @@
     Me: Paul Esch-Laurent
     Site: window.location.hostname
     Twitter: @Pinjasaur
-    Location: Michigan, US
+    Location: The Midwest™, US
 
 # THANKS
 
