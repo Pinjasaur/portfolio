@@ -5,8 +5,8 @@
 
     Me: Paul Esch-Laurent
     Site: window.location.hostname
-    Twitter: @Pinjasaur
     Location: The Midwest™, US
+    Favorite color: purple, followed by green
 
 # THANKS
 
