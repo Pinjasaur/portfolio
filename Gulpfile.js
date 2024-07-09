@@ -120,9 +120,9 @@ gulp.task("build:img", function() {
 });
 
 // Copy documents
-gulp.task("build:docs", function() {
-  return gulp.src(paths.src + "/docs/**/*")
-    .pipe(gulp.dest(paths.dist + "/docs"));
+gulp.task("build:static", function() {
+  return gulp.src(paths.src + "/static/**/*")
+    .pipe(gulp.dest(paths.dist + "/static"));
 })
 
 // Combine SVG icons
@@ -174,7 +174,7 @@ gulp.task("build", function(done) {
       [
         "build:useref",
         "build:img",
-        "build:docs",
+        "build:static",
         "build:icons",
         "build:humans.txt",
         "build:robots.txt",

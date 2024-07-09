@@ -1,5 +1,5 @@
 # www.robotstxt.org/
 
-# Disallow crawling of /docs/
+# Disallow crawling of /static/
 User-agent: *
-Disallow: /docs/
+Disallow: /static/
