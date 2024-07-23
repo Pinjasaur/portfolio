@@ -18,7 +18,7 @@
   }
 
   &--info {
-    @include note-variant(rgb(8, 66, 174), "ℹ️");
+    @include note-variant(rgb(48, 139, 231), "ℹ️");
   }
 
   &--no-icon {
