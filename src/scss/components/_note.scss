@@ -6,15 +6,19 @@
 
 .note {
   &--success {
-    @include note-variant(rgb(15, 182, 32), "\2714");
+    @include note-variant(rgb(15, 182, 32), "✅");
   }
 
   &--error {
-    @include note-variant(rgb(189, 4, 4), "\2717");
+    @include note-variant(rgb(189, 4, 4), "❌");
   }
 
   &--warning {
-    @include note-variant(rgb(227, 109, 0), "\0021");
+    @include note-variant(rgb(227, 109, 0), "⚠️");
+  }
+
+  &--info {
+    @include note-variant(rgb(8, 66, 174), "ℹ️");
   }
 
   &--no-icon {
