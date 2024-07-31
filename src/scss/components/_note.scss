@@ -22,6 +22,8 @@
   }
 
   &--no-icon {
+    padding-left: 1em;
+
     &:before {
       display: none;
     }
