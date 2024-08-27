@@ -99,3 +99,9 @@ ul {
 del {
   opacity: .7;
 }
+
+blockquote {
+  border-left: .25em solid $color-primary;
+  margin-left: 0;
+  padding-left: 2em;
+}
